@@ -11,9 +11,20 @@ const getFileData = async (file) => {
   }
 };
 
-const parseFileDataAsJson = (fileData = '') => fileData.toString().split('\n');
+const parseFileDataAsArray = (fileData) => {
+  const fileDataAsString = fileData.toString();
+  if (!fileDataAsString) {
+    return;
+  }
+  const fileDataAsArray = fileDataAsString.split('\n');
+  try {
+    return fileDataAsArray.map((item) => JSON.parse(item));
+  } catch {
+    return;
+  }
+};
 
 module.exports = {
   getFileData,
-  parseFileDataAsJson,
+  parseFileDataAsArray,
 };

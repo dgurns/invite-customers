@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "customers:generate": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
 }
